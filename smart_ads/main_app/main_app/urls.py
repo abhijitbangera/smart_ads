@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from main_app import views as main_app_view
+from client.views import clientads
 from django.conf.urls import url, include
 from django.contrib.auth import views as auth_views
 
@@ -23,6 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     url('^$',main_app_view.test, name='test' ),
     url('dashboard/$', main_app_view.dashboard, name='dashboard'),
+    url('dashboard/1$', clientads, name='clientads'),
 
     url(r'^login/$', auth_views.LoginView.as_view(template_name="client_login.html"), name="login"),
     url(r'^logout/$', auth_views.LogoutView.as_view(template_name="index.html"), name="logout"),
