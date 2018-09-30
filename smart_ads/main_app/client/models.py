@@ -13,6 +13,7 @@ class adsDetails(models.Model):
     right_top = models.CharField('Ad-3: Top Right', max_length=200,default="",blank= True)
     right_bottom = models.CharField('Ad-4: Bottom Right', max_length=200,default="",blank= True)
     footer = models.CharField('Footer Text', max_length=300,default="",blank= True)
+    update_flag = models.BooleanField(default=True, blank=True)
 
     def __str__(self):
         return str(self.client_id)

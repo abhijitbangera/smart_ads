@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from main_app import views as main_app_view
-from client.views import clientads, client_profile
+from client.views import clientads, client_profile, clientads_api
 from django.conf.urls import url, include
 from django.contrib.auth import views as auth_views
 
@@ -29,5 +29,7 @@ urlpatterns = [
 
     url(r'^login/$', auth_views.LoginView.as_view(template_name="client_login.html"), name="login"),
     url(r'^logout/$', auth_views.LogoutView.as_view(template_name="index.html"), name="logout"),
+    url(r'^api/clientads/$',clientads_api, name='clientads_api'), # http://127.0.0.1:8000/api/clientads/?id=1
+    url(r'^api/post_clientads/$',clientads_api, name='clientads_api'), # http://127.0.0.1:8000/api/post_clientads/
 
 ]
