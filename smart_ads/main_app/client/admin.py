@@ -6,5 +6,7 @@ from client.models import adsDetails, clientDetails
 
 # Register your models here.
 
+
+
 admin.site.register(adsDetails)
 admin.site.register(clientDetails)
